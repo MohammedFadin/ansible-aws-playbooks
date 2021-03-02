@@ -5,6 +5,8 @@
 #     connection: local
 
     tasks:
+      - name: install ansible galaxy
+        command: ansible-galaxy collection install community.aws
       - name: Create new bucket
         aws_s3:
           bucket: test275dddddbnewnewn
