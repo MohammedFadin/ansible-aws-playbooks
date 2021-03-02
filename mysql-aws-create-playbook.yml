@@ -6,7 +6,7 @@
     - name: Creating MYSQL database on AWS
       community.aws.rds:
         command: create
-        instance_name: new-database
+        instance_name: mfadin-mysql
         db_engine: MySQL
         size: 10
         instance_type: db.t2.micro
