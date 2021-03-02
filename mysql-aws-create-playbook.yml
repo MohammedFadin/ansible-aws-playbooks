@@ -5,6 +5,8 @@
     tasks:
     - name: install ansible galaxy
       command: ansible-galaxy collection install community.aws    
+    - name: Add EC2_REGION environment variable to host
+      commadn: export EC2_REGION=us-east-2
     - name: Creating MYSQL database on AWS
       community.aws.rds:
         command: create
