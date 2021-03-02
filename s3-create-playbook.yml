@@ -1,6 +1,6 @@
 ---
   - name: Test s3
-    hosts: localhost
+    hosts: all
     connection: local
 
     tasks:
