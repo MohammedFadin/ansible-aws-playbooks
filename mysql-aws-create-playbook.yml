@@ -8,7 +8,7 @@
       environment:
         AWS_REGION: us-east-2
     - name: echo env values
-      shell: echo $AWS_REGION
+      shell: export AWS_REGION=us-east-2
     - name: Creating MYSQL database on AWS
       community.aws.rds:
         command: create
