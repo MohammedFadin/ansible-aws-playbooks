@@ -1,7 +1,7 @@
 ---
   - name: Provision MySql on AWS
-    hosts: localhost
-    connection: local
+    hosts: all
+    remote_user: ubuntu
     tasks:
     - name: Creating MYSQL database on AWS
       community.aws.rds:
