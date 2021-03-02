@@ -3,6 +3,8 @@
     hosts: all
     remote_user: ubuntu
     tasks:
+    - name: install ansible galaxy
+      command: ansible-galaxy collection install community.aws    
     - name: Creating MYSQL database on AWS
       community.aws.rds:
         command: create
