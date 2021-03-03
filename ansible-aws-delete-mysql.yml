@@ -1,0 +1,20 @@
+---
+  - name: DeProvision MySQL on AWS
+    hosts: all
+    remote_user: ubuntu
+    tasks:
+    - name: echo env values
+      shell: export AWS_REGION=us-east-2
+    - name: Deleting MYSQL database from AWS RDS
+      community.aws.rds:
+        command: delete
+        instance_name: mfadin-mysql
+        db_engine: MySQL
+        size: 10
+        instance_type: db.t2.micro
+        username: mysql_admin
+        password: 1nsecure
+        region: us-east-2
+        tags:
+          Environment: testing
+          Application: cms
