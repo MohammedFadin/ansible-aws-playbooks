@@ -2,6 +2,7 @@
   - name: Provision MySql on AWS
     hosts: all
     remote_user: ubuntu
+    sudo: True
     tasks:
     - name: install ansible galaxy
       command: ansible-galaxy collection install community.aws    
