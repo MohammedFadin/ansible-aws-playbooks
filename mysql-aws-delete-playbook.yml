@@ -1,5 +1,5 @@
 ---
-  - name: DeProvision MySQL on AWS
+  - name: De-Provision MySQL on AWS
     hosts: all
     remote_user: ubuntu
     tasks:
@@ -9,12 +9,4 @@
       community.aws.rds:
         command: delete
         instance_name: mfadin-mysql
-        db_engine: MySQL
-        size: 10
-        instance_type: db.t2.micro
-        username: mysql_admin
-        password: 1nsecure
         region: us-east-2
-        tags:
-          Environment: testing
-          Application: cms
