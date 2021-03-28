@@ -2,11 +2,13 @@
   - name: De-Provision MySQL on AWS
     hosts: all
     remote_user: ubuntu
+    vars:
+      resource_name: "default"
     tasks:
     - name: echo env values
       shell: export AWS_REGION=us-east-2
     - name: Deleting MYSQL database from AWS RDS
       community.aws.rds:
         command: delete
-        instance_name: mfadin-mysql
+        instance_name: "{{ resource_name }}"
         region: us-east-2
